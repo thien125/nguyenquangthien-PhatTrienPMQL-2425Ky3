@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The input Element</h2>
+
+<form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <!-- <input>tử có thể được hiển thị theo nhiều cách, tùy thuộc vào type thuộc tính. -->
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+  <!-- <select>định nghĩa một danh sách thả xuống -->
+  <select id="cars" name="cars">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <!-- sizethuộc tính để chỉ định số lượng giá trị hiển thị -->
+  <select id="cars" name="cars" size="3">
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="fiat">Fiat</option>
+    <option value="audi">Audi</option>
+  </select>
+  <!-- <textarea>xác định một trường nhập liệu nhiều dòng (một vùng văn bản) -->
+    <textarea name="message" rows="10" cols="30">
+    The cat was playing in the garden.
+    </textarea>
+    <!-- <button>định nghĩa một nút có thể nhấp được -->
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+   <!-- <fieldset>được sử dụng để nhóm dữ liệu có liên quan trong một biểu mẫu. -->
+    <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+  <!-- <output>biểu thị kết quả của phép tính -->
+    <input type="range" id="a" name="a" value="50">
+  100 +
+  <input type="number" id="b" name="b" value="50">
+  =
+  <output name="x" for="a b"></output>
+</form>
+
+</body>
+</html>

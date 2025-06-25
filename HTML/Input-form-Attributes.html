@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The input form attribute</h1>
+
+<p>The form attribute specifies the form an input element belongs to.</p>
+
+<form action="/action_page.php" id="form1">
+  <!-- formchỉ rõ dạng mà <input>phần tử thuộc về -->
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <input type="submit" value="Submit">
+  <!-- formactionchỉ định URL của tệp sẽ xử lý dữ liệu đầu vào khi biểu mẫu được gửi -->
+  <input type="submit" formaction="/action_page2.php" value="Submit as Admin">
+  <!-- formenctype chỉ định cách dữ liệu biểu mẫu sẽ được mã hóa khi được gửi -->
+  <input type="submit" formenctype="multipart/form-data"
+  value="Submit as Multipart/form-data">
+  <!-- formnovalidatechỉ định rằng phần tử <input> không được xác thực khi gửi -->
+</form>
+
+
+</body>
+</html>
+

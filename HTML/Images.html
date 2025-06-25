@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* Chỉ định hình ảnh nền trong <style> phần tử */
+p {
+  background-image: url('img_girl.jpg');
+}
+
+/* Hình nền trên trang */
+body {
+  background-image: url('img_girl.jpg');
+}
+
+/* Lặp lại nền */
+body {
+  background-image: url('example_img_girl.jpg');
+  background-repeat: no-repeat;
+}
+
+/* Bìa nền */
+body {
+  background-image: url('img_girl.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Alternative text</h2>
+
+<p>The alt attribute should reflect the image content, so users who cannot see the image get an understanding of what the image contains:</p>
+<!-- <img> được sử dụng để nhúng hình ảnh vào trang web, src chỉ định đường dẫn (URL) đến hình ảnh, alt thuộc tính phải mô tả hình ảnh -->
+<img src="img_chania.jpg" alt="Flowers in Chania" width="460" height="345">
+
+<!-- stylethuộc tính này để chỉ định chiều rộng và chiều cao của hình ảnh -->
+<img src="img_girl.jpg" alt="Girl in a jacket" style="width:500px;height:600px;">
+<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+
+<!-- Hình ảnh trong thư mục khác -->
+<img src="/images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+<!-- Hình ảnh trên máy chủ/trang web khác -->
+<img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools.com">
+
+<!-- Hình ảnh động -->
+<img src="programming.gif" alt="Computer Man" style="width:48px;height:48px;">
+
+<!-- Hình ảnh như một liên kết -->
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;">
+</a>
+
+<!-- Hình ảnh nổi -->
+<p><img src="smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+The image will float to the right of the text.</p>
+
+<!-- Bản đồ hình ảnh
+<map>định nghĩa một bản đồ hình ảnh. Bản đồ hình ảnh là một hình ảnh có các vùng có thể nhấp được. Các vùng được định nghĩa bằng một hoặc nhiều <area>thẻ. -->
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap">
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+</map>
+
+
+<!-- Hình nền trên một phần tử HTML -->
+<!-- Thêm hình ảnh nền vào phần tử <p> -->
+<p style="background-image: url('img_girl.jpg');">
+    You can specify background images<br>
+    for any visible HTML element.<br>
+</p>
+
+</body>
+</html>

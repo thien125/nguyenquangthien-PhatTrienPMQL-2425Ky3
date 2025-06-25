@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Text field</h2>
+<p>The <strong>input type="text"</strong> defines a one-line text input field:</p>
+
+<form action="/action_page.php">
+  <!-- <input type="text">định nghĩa một trường nhập văn bản một dòng -->
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="submit" value="Submit">
+  <!-- <input type="password">định nghĩa trường mật khẩu -->
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd">
+  <!-- <input type="submit">định nghĩa một nút để gửi dữ liệu biểu mẫu tới trình xử lý biểu mẫu -->
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <input type="submit" value="Submit">
+  <!-- <input type="reset">định nghĩa nút đặt lại sẽ đặt lại tất cả các giá trị biểu mẫu về giá trị mặc định của chúng -->
+   <input type="reset" value="Reset">
+   <!-- <input type="date">sử dụng cho các trường nhập dữ liệu có chứa ngày tháng -->
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday">
+  <!-- <input type="email">sử dụng cho các trường nhập dữ liệu có chứa địa chỉ email -->
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email">
+  <!-- <input type="image"> nghĩa hình ảnh như một nút gửi -->
+  <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+  <!-- <input type="file"> nghĩa trường chọn tệp và nút "Duyệt" để tải tệp lên -->
+  <label for="myfile">Select a file:</label>
+  <input type="file" id="myfile" name="myfile">
+</form>
+
+</body>
+</html>

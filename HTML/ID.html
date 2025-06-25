@@ -1,0 +1,22 @@
+<!-- idtính được sử dụng để chỉ định một id duy nhất cho một phần tử HTML
+id cũng được sử dụng để tạo dấu trang HTML
+Giá trị của id thuộc tính phải là duy nhất trong tài liệu HTML -->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Using The id Attribute in JavaScript</h2>
+<p>JavaScript can access an element with a specified id by using the getElementById() method:</p>
+
+<h1 id="myHeader">Hello World!</h1>
+<button onclick="displayResult()">Change text</button>
+
+<!-- JavaScript có thể truy cập vào một phần tử có id cụ thể bằng getElementById() phương thức -->
+<script>
+function displayResult() {
+  document.getElementById("myHeader").innerHTML = "Have a nice day!";
+}
+</script>
+
+</body>
+</html>

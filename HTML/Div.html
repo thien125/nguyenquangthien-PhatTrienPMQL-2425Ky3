@@ -1,0 +1,44 @@
+<!-- <div>là phần tử khối, nghĩa là nó chiếm toàn bộ chiều rộng có sẵn và có ngắt dòng trước và sau. -->
+<!DOCTYPE html>
+<html>
+<style>
+div {
+  background-color: #FFF4A3;
+/* một <div>phần tử không rộng 100% và muốn căn giữa phần tử đó, hãy đặt thuộc margintính CSS thành auto. */
+  width:300px;
+  margin:auto;
+}
+
+.mycontainer {
+  width:100%;
+  overflow:auto;
+}
+.mycontainer div {
+  width:33%;
+  float:left;
+}
+</style>
+<body>
+
+<h1>HTML DIV Example</h1>
+
+<!-- <div>thường được sử dụng để nhóm các phần của một trang web lại với nhau. -->
+Lorem Ipsum <div>I am a div</div> dolor sit amet.
+
+<!-- có thể có nhiều <div>container trên cùng một trang. -->
+<div class="mycontainer">
+    <div>
+        <h2>London</h2>
+        <p>London is the capital city of England.</p>
+        <p>London has over 9 million inhabitants.</p>
+    </div>
+
+    <div>
+        <h2>Oslo</h2>
+        <p>Oslo is the capital city of Norway.</p>
+        <p>Oslo has over 700,000 inhabitants.</p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th, td {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+table {
+  border-spacing: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table style="width:100%">
+<!-- Mọi thứ nằm giữa <td>và </td> là nội dung của ô trong bảng
+Mỗi hàng của bảng bắt đầu bằng ký tự a <tr>và kết thúc bằng </tr>thẻ
+Muốn các ô của mình là các ô tiêu đề bảng sử dụng <th>
+Để thêm đường viền, hãy sử dụng borderthuộc tính CSS trên các phần tử table, th, và td
+Hãy đặt thuộc tính CSS border-collapse thành collapse sẽ thu gọn các đường viền thành một đường viền duy nhất
+border-radius: các đường viền sẽ được bo tròn các góc
+border-stylestyle: có thể thiết lập giao diện của đường viền
+border-colorcolor: có thể thiết lập màu cho đường viền
+Để thiết lập chiều rộng của bảng, hãy thêm style thuộc tính vào <table>phần tử
+Để thiết lập kích thước của một cột cụ thể, hãy thêm style thuộc tính vào phần tử a <th>hoặc b <td>
+Để thiết lập chiều cao của một hàng cụ thể, hãy thêm style thuộc tính vào phần tử <tr> của bảng
+Để thêm phần đệm vào các ô trong bảng, hãy sử dụng paddingthuộc tính CSS
+Thêm phần đệm vào các cạnh còn lại bằng các thuộc tính padding-bottom, padding-left, và padding-right
+Để thay đổi khoảng cách giữa các ô trong bảng, hãy sử dụng border-spacingthuộc tính CSS trên table phần tử
+Để tạo một ô trải dài trên nhiều cột, hãy sử dụng colspan
+Để làm cho một ô trải dài trên nhiều hàng, hãy sử dụng rowspan -->
+  <tr>
+    <th style="width:70%">Company</th>
+    <th colspan="2">Contact</th>
+    <th rowspan="2">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
+
+</body>
+</html>
