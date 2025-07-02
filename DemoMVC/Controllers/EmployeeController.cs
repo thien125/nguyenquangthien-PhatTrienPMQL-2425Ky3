@@ -11,9 +11,12 @@ namespace DemoMVC.Controllers
             return View();
         }
 
-        public IActionResult Welcome()
-        {
-            return View();
-        }
+    [HttpPost]
+    public IActionResult Index(Employee ep)
+    {
+        string strOutput = "Xin chào " + ep.EmployeeId + " - " + ep.PersonId + " - " + ep.FullName + " - "+ ep.Address + " - " + ep.Age;
+        ViewBag.infoEmployee = strOutput;
+        return View();
+    }
     }
 }

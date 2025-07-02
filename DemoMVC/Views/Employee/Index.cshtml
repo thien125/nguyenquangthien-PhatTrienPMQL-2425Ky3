@@ -1,7 +1,14 @@
-@{
-    Layout = "_Layout";
-}
-
-<h2>Index</h2>
-
-<p>Hello Nguyễn Quang Thiện!</p>
+<h1>Dữ liệu của Controller gửi về là: @ViewBag.infoEmployee</h1>
+<form asp-action="Index">
+    <label>Nhập EmployeeId:</label>
+    <input type="text" name="EmployeeId"><br>
+    <label>Nhập PersonId:</label>
+    <input type="text" name="PersonId"><br>
+    <label>Nhập họ tên:</label>
+    <input type="text" name="FullName"><br>
+    <label>Nhập địa chỉ:</label>
+    <input type="text" name="Address"><br>
+    <label>Nhập tuổi:</label>
+    <input type="text" name="Age"><br>
+    <input type="submit" value="Gửi dữ liệu">
+</form>
