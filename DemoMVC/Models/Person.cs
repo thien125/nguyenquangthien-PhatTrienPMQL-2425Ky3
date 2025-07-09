@@ -8,7 +8,7 @@ namespace DemoMVC.Models
         [Key]
         public required string PersonId { get; set; }
         [MinLength(5, ErrorMessage = "Full name must be at least 5 characters long.")]
-        public required string FullName { get; set; }
+        public string? FullName { get; set; }
         public string? Address { get; set; }
     }
 }

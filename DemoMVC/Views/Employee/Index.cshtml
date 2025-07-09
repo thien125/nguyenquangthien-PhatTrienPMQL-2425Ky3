@@ -1,14 +1,41 @@
-<h1>Dữ liệu của Controller gửi về là: @ViewBag.infoEmployee</h1>
-<form asp-action="Index">
-    <label>Nhập EmployeeId:</label>
-    <input type="text" name="EmployeeId"><br>
-    <label>Nhập PersonId:</label>
-    <input type="text" name="PersonId"><br>
-    <label>Nhập họ tên:</label>
-    <input type="text" name="FullName"><br>
-    <label>Nhập địa chỉ:</label>
-    <input type="text" name="Address"><br>
-    <label>Nhập tuổi:</label>
-    <input type="text" name="Age"><br>
-    <input type="submit" value="Gửi dữ liệu">
-</form>
+@model IEnumerable<DemoMVC.Models.Employee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

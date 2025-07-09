@@ -43,7 +43,11 @@ namespace DemoMVC.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var lastPerson = _context.Person.OrderByDescending(p => p.PersonId).FirstOrDefault();
+            string newId = Auto.GenerateNewId(lastPerson?.PersonId);
+
+            var newPerson = new Person { PersonId = newId };
+            return View(newPerson);
         }
 
         [HttpPost]
