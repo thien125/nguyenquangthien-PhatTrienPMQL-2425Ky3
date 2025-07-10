@@ -11,5 +11,7 @@ namespace DemoMVC.Data
         }
         public DbSet<Person> Person { get; set; } = null!;
         public DbSet<Employee> Employee { get; set; } = null!;
+        public DbSet<DemoMVC.Models.DaiLy> DaiLy { get; set; } = default!;
+        public DbSet<DemoMVC.Models.HeThongPhanPhoi> HeThongPhanPhoi { get; set; } = default!;
     }
 }
