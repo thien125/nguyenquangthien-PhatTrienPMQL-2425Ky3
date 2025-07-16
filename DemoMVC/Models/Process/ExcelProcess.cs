@@ -7,6 +7,8 @@ namespace DemoMVC.Models.Process
     {
         public DataTable ExcelToDataTable(string strPath)
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            
             FileInfo fi = new FileInfo(strPath);
             ExcelPackage excelPackage = new ExcelPackage(fi);
             DataTable dt = new DataTable();

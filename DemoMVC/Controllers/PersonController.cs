@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using DemoMVC.Data;
 using DemoMVC.Models;
 using DemoMVC.Models.Process;
+using OfficeOpenXml;
 
 namespace DemoMVC.Controllers
 {
@@ -97,7 +98,7 @@ namespace DemoMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(person.PersonId))
+                    if (!PersonExists(person.PersonId))
                     {
                         return NotFound();
                     }
@@ -152,7 +153,7 @@ namespace DemoMVC.Controllers
         {
             if (file != null)
             {
-                string fileExtension = Path.GetExtension(file.Name);
+                string fileExtension = Path.GetExtension(file.FileName);
                 if (fileExtension != ".xls" && fileExtension != ".xlsx")
                 {
                     ModelState.AddModelError("", "Please choose excel file to upload");
@@ -165,26 +166,41 @@ namespace DemoMVC.Controllers
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
-                        var dt = _excelProcess.ExcelToDataTable(fileLocation);
-                        for (int i = 0; i < dt.Rows.Count; i++)
-                        {
-                            var ps = new Person
-                            {
-                                PersonId = dt.Rows[i][0].ToString(),
-                                FullName = dt.Rows[i][1].ToString(),
-                                Address = dt.Rows[i][2].ToString()
-                            };
-                            _context.Add(ps);
-                        }
-                        await _context.SaveChangesAsync();
-                        return RedirectToAction(nameof(Index));
                     }
+                    var dt = _excelProcess.ExcelToDataTable(fileLocation);
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        var ps = new Person
+                        {
+                            PersonId = dt.Rows[i][0].ToString(),
+                            FullName = dt.Rows[i][1].ToString(),
+                            Address = dt.Rows[i][2].ToString()
+                        };
+                        _context.Add(ps);
+                    }
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
             }
             return View();
         }
 
-        private bool StudentExists(string id)
+        public IActionResult Download()
+        {
+            var fileName = "YourFileName" + ".xlsx";
+            using (ExcelPackage excelPackage = new ExcelPackage())
+            {
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet 1");
+                worksheet.Cells["A1"].Value = "PersonId";
+                worksheet.Cells["B1"].Value = "FullName";
+                worksheet.Cells["C1"].Value = "Address";
+                var personList = _context.Person.ToList();
+                worksheet.Cells["A2"].LoadFromCollection(personList);
+                var stream = new MemoryStream(excelPackage.GetAsByteArray());
+                return File(stream, "applicaton/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
+        }
+        private bool PersonExists(string id)
         {
             return _context.Person.Any(e => e.PersonId == id);
         }
